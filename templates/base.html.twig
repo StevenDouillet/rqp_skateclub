@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta charset="utf-8">
+        <link rel="icon" type="image/png" href="/images/rqp_white.png">
+        <title>RQP Skateclub | {% block title %}{% endblock %}</title>
+        <meta name="description" content="Roule Qui Peut est une association pour le développement du skateboard dans la région lyonnaise">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% include 'assets/css.html.twig' %}
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% include 'navbar.html.twig' %}
+
+        {% block body %}
+        {% endblock %}
+
+        {% include 'footer.html.twig' %}
+
+        {% include 'assets/js.html.twig' %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

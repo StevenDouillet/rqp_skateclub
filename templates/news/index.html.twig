@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}News de l'asso{% endblock %}
+
+{% block body %}
+
+    <div class="container pt-5">
+
+        <div class="section-module-head mt-5">
+            <h2 class="section-module-title">Actus</h2>
+        </div>
+
+        <div class="row">
+
+            {% for news in news_list %}
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                    <a href="{{ path("show_news", {id:news.id}) }}"><img class="card-img-top" src="/images/news/img1.png" alt=""></a>
+
+                    <div class="card-body text-center">
+
+                        <h4 class="item-title">
+                            <a href="{{ path("show_news", {id:news.id}) }}">{{ news.title }}</a>
+                        </h4>
+
+                        <p class="item-date">{{ news.getCreatedDate() | date('d/m/Y \à H:i') }}</p>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+{% endblock %}
